@@ -26,5 +26,8 @@ public class Main {
             System.out.println("No successor found.");
         }
 
+        java.util.List<java.util.List<java.lang.Integer>> zigzagLevelOrder = bfs.zigzagLevelOrder(root);
+        System.out.println(zigzagLevelOrder);
+
     }
 }
