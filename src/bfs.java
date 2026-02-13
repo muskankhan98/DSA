@@ -1,3 +1,5 @@
+
+
 import javax.swing.tree.TreeNode;
 import java.util.*;
 
@@ -7,6 +9,7 @@ public class bfs {
         int val;
         TreeNode left;
         TreeNode right;
+        TreeNode next;
     }
 
     public TreeNode findSuccessor(TreeNode root, TreeNode key) {
@@ -72,6 +75,28 @@ public class bfs {
             result.add(currentLevel);
         }
         return result;
+    }
+
+   // https://leetcode.com/problems/populating-next-right-pointers-in-each-node/description/
+    // important with o(1) space complexity
+    public TreeNode connect(TreeNode root) {
+        if(root==null)return null;
+        TreeNode leftNode = root;
+        while(leftNode.left!=null)
+        {
+            TreeNode current = leftNode;
+            while(current!=null)
+            {
+                current.left.next = current.right;
+                if(current.next!=null)
+                {
+                    current.right.next=current.next.left;
+                }
+                current=current.next;
+            }
+            leftNode=leftNode.left;
+        }
+        return root;
     }
 }
 
