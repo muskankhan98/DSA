@@ -98,6 +98,33 @@ public class bfs {
         }
         return root;
     }
+
+    //https://leetcode.com/problems/binary-tree-right-side-view/description/
+    public List<Integer> rightSideView(TreeNode root) {
+        List<Integer> result = new ArrayList<>();
+        if(root==null)return result;
+
+        Queue<TreeNode>q= new LinkedList<>();
+        q.offer(root);
+
+        while(!q.isEmpty())
+        {
+            int levelsize = q.size();
+
+            for(int i=0;i<levelsize;i++)
+            {
+                TreeNode node = q.poll();
+                if(i==levelsize-1)
+                    result.add(node.val);
+
+                if(node.left!=null)
+                    q.offer(node.left);
+                if(node.right!=null)
+                    q.offer(node.right);
+            }
+        }
+        return result;
+    }
 }
 
 
