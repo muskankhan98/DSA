@@ -29,5 +29,7 @@ public class Main {
         java.util.List<java.util.List<java.lang.Integer>> zigzagLevelOrder = bfs.zigzagLevelOrder(root);
         System.out.println(zigzagLevelOrder);
 
+        System.out.println("Diameter of Binary Tree: " + new dfs().diameterOfBinaryTree(root));
+
     }
 }
