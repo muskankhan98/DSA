@@ -18,4 +18,16 @@ public class dfs {
         return  Math.max(left,right)+1;
     }
 
+    public bfs.TreeNode invertTree(bfs.TreeNode root) {
+        if(root==null)return null;
+
+        bfs.TreeNode left = invertTree(root.left);
+        bfs.TreeNode right= invertTree(root.right);
+
+        root.right=left ;
+        root.left = right;
+
+
+        return root;
+    }
 }

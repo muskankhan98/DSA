@@ -31,5 +31,7 @@ public class Main {
 
         System.out.println("Diameter of Binary Tree: " + new dfs().diameterOfBinaryTree(root));
 
+        bfs.TreeNode invertedRoot = new dfs().invertTree(root);
+        System.out.println("Inverted Tree (level order): " + bfs.levelOrder(invertedRoot));
     }
-}
+    }
