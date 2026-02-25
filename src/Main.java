@@ -33,5 +33,8 @@ public class Main {
 
         bfs.TreeNode invertedRoot = new dfs().invertTree(root);
         System.out.println("Inverted Tree (level order): " + bfs.levelOrder(invertedRoot));
+
+        System.out.println("Is Valid BST: " + new dfs().isValidBST(root));
+        
     }
     }
